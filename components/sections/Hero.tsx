@@ -13,7 +13,7 @@ export function Hero() {
         {/* Dark Overlay */}
         <iframe
           className="absolute top-1/2 left-1/2 w-[300%] h-[300%] -translate-x-1/2 -translate-y-1/2 opacity-60 grayscale md:w-[150%] md:h-[150%]"
-          src="https://www.youtube.com/embed/FGRvP8eoPdw?start=5&autoplay=1&mute=1&controls=0&loop=1&playlist=FGRvP8eoPdw&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
+          src="https://www.youtube.com/embed/FGRvP8eoPdw?start=6&autoplay=1&mute=1&controls=0&loop=1&playlist=FGRvP8eoPdw&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           style={{ border: "none" }}
         />
