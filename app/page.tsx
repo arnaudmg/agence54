@@ -7,6 +7,8 @@ import { Footer } from "@/components/layout/Footer";
 import { getPayload } from "payload";
 import config from "@/payload.config";
 
+export const dynamic = 'force-dynamic';
+
 export default async function Home() {
   const payload = await getPayload({ config });
   const homeData = await payload.findGlobal({
