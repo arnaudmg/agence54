@@ -1,7 +1,23 @@
 import Link from "next/link";
 import { Instagram, Linkedin } from "lucide-react";
 
-export function Footer() {
+interface FooterProps {
+  data?: {
+    description?: string | null;
+    email?: string | null;
+    addressLine1?: string | null;
+    addressLine2?: string | null;
+  };
+}
+
+export function Footer({ data }: FooterProps) {
+  const {
+    description = "Personal Branding & Contenu Vidéo Clé-en-main. Pour dirigeants et entrepreneurs francophones.",
+    email = "hello@agence54.com",
+    addressLine1 = "Studio 54",
+    addressLine2 = "Barcelone, Casp 54",
+  } = data || {};
+
   return (
     <footer className="bg-black border-t border-zinc-900 pt-20 pb-10">
       <div className="container mx-auto px-4">
@@ -14,8 +30,7 @@ export function Footer() {
               Agence 54<span className="text-zinc-600">.</span>
             </Link>
             <p className="text-zinc-500 text-sm leading-relaxed max-w-xs">
-              Personal Branding & Contenu Vidéo Clé-en-main. Pour dirigeants et
-              entrepreneurs francophones.
+              {description}
             </p>
             <div className="flex items-center gap-4">
               <Link
@@ -75,14 +90,14 @@ export function Footer() {
               Contact
             </h4>
             <address className="not-italic text-sm text-zinc-500 space-y-4">
-              <p>Studio 54</p>
-              <p>Barcelone, Casp 54</p>
+              <p>{addressLine1}</p>
+              <p>{addressLine2}</p>
               <p>
                 <a
-                  href="mailto:hello@agence54.com"
+                  href={`mailto:${email}`}
                   className="hover:text-white transition-colors"
                 >
-                  hello@agence54.com
+                  {email}
                 </a>
               </p>
             </address>

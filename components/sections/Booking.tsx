@@ -12,6 +12,15 @@ import {
   Calendar,
 } from "lucide-react";
 
+interface BookingProps {
+  data?: {
+    label?: string | null;
+    titleLine1?: string | null;
+    titleLine2?: string | null;
+    description?: string | null;
+  };
+}
+
 const steps = [
   { id: 1, name: "Choix du Pack" },
   { id: 2, name: "Votre Profil" },
@@ -39,7 +48,14 @@ const packs = [
   },
 ];
 
-export function Booking() {
+export function Booking({ data }: BookingProps) {
+  const {
+    label = "Nos Offres",
+    titleLine1 = "Démarrer votre",
+    titleLine2 = "accompagnement.",
+    description = "Nous limitons nos places à 8-10 clients premium pour garantir la qualité. Réservez un appel pour vérifier votre éligibilité.",
+  } = data || {};
+
   const [currentStep, setCurrentStep] = useState(1);
   const [selection, setSelection] = useState({
     pack: "",
@@ -57,17 +73,14 @@ export function Booking() {
           {/* Left Side: Info */}
           <div className="lg:w-1/3 pt-10">
             <h2 className="text-sm font-bold tracking-widest text-zinc-500 uppercase mb-4">
-              Nos Offres{" "}
+              {label}{" "}
             </h2>
             <h3 className="text-4xl font-bold tracking-tighter text-white mb-6">
-              Démarrer votre
+              {titleLine1}
               <br />
-              accompagnement.
+              {titleLine2}
             </h3>
-            <p className="text-zinc-400 mb-8 leading-relaxed">
-              Nous limitons nos places à 8-10 clients premium pour garantir la
-              qualité. Réservez un appel pour vérifier votre éligibilité.
-            </p>
+            <p className="text-zinc-400 mb-8 leading-relaxed">{description}</p>
 
             <div className="space-y-6 border-l border-zinc-800 pl-6">
               {steps.map((step) => (
@@ -84,8 +97,8 @@ export function Booking() {
                       currentStep === step.id
                         ? "bg-white text-black border-white"
                         : currentStep > step.id
-                        ? "bg-green-500 text-black border-green-500"
-                        : "bg-transparent border-zinc-800"
+                          ? "bg-green-500 text-black border-green-500"
+                          : "bg-transparent border-zinc-800"
                     )}
                   >
                     {currentStep > step.id ? (

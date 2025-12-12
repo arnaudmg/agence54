@@ -4,7 +4,25 @@ import { Button } from "@/components/ui/Button";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
-export function Hero() {
+interface HeroProps {
+  data?: {
+    titleLine1?: string | null;
+    titleLine2?: string | null;
+    titleLine3?: string | null;
+    description?: string | null;
+    youtubeVideoId?: string | null;
+  };
+}
+
+export function Hero({ data }: HeroProps) {
+  const {
+    titleLine1 = "PERSONAL BRANDING",
+    titleLine2 = "& CONTENU VIDÉO",
+    titleLine3 = "CLÉ-EN-MAIN.",
+    description = "Agence 54 accompagne dirigeants et entrepreneurs dans la création d’un personal brand puissant.",
+    youtubeVideoId = "FGRvP8eoPdw",
+  } = data || {};
+
   return (
     <section className="relative min-h-screen flex flex-col items-start justify-center pt-20 overflow-hidden">
       {/* Video Background */}
@@ -13,7 +31,7 @@ export function Hero() {
         {/* Dark Overlay */}
         <iframe
           className="absolute top-1/2 left-1/2 w-[300%] h-[300%] -translate-x-1/2 -translate-y-1/2 opacity-60 grayscale md:w-[150%] md:h-[150%]"
-          src="https://www.youtube.com/embed/FGRvP8eoPdw?start=6&autoplay=1&mute=1&controls=0&loop=1&playlist=FGRvP8eoPdw&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
+          src={`https://www.youtube.com/embed/${youtubeVideoId}?start=6&autoplay=1&mute=1&controls=0&loop=1&playlist=${youtubeVideoId}&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1`}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           style={{ border: "none" }}
         />
@@ -28,11 +46,11 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tighter leading-[0.9] text-white"
           >
-            PERSONAL BRANDING
+            {titleLine1}
             <br />
-            & CONTENU VIDÉO
+            {titleLine2}
             <br />
-            <span className="text-zinc-500">CLÉ-EN-MAIN.</span>
+            <span className="text-zinc-500">{titleLine3}</span>
           </motion.h1>
         </div>
 
@@ -43,15 +61,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="max-w-xl text-lg sm:text-xl text-zinc-300 mb-10 leading-relaxed border-l-2 border-zinc-700 pl-6"
         >
-          Agence 54 accompagne dirigeants et entrepreneurs dans la création d’un
-          personal brand puissant.
-          <br />
-          <br />
-          <span className="text-white font-medium">
-            Vous venez, vous parlez, vous repartez.
-          </span>
-          <br />
-          Tout est géré : édito → tournage → montage → publication.
+          {description}
         </motion.p>
 
         {/* CTA Buttons */}

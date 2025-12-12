@@ -4,28 +4,45 @@ import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 import Image from "next/image";
 
-export function Studios() {
+interface StudiosProps {
+  data?: {
+    label?: string | null;
+    title?: string | null;
+    description?: string | null;
+    location?: string | null;
+    equipmentTitle?: string | null;
+    equipmentList?: string | null;
+  };
+}
+
+export function Studios({ data }: StudiosProps) {
+  const {
+    label = "Lieu de tournage",
+    title = "Le Studio 54.",
+    description = "Un espace premium, optimisé pour les podcasts et contenus vidéo. Caméras, micros, prompteurs, tout est prêt pour vous.",
+    location = "Barcelone, Casp 54",
+    equipmentTitle = "Notre matériel",
+    equipmentList = "3 Caméras 4K • Micros Shure SM7B • Éclairage Aputure",
+  } = data || {};
+
   return (
     <section id="studio" className="py-20 bg-black border-b border-white/5">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-8">
           <div className="max-w-2xl">
             <h2 className="text-sm font-bold tracking-widest text-zinc-500 uppercase mb-4">
-              Lieu de tournage
+              {label}
             </h2>
             <h3 className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-6">
-              Le Studio 54.
+              {title}
             </h3>
-            <p className="text-xl text-zinc-400">
-              Un espace premium, optimisé pour les podcasts et contenus vidéo.
-              Caméras, micros, prompteurs, tout est prêt pour vous.
-            </p>
+            <p className="text-xl text-zinc-400">{description}</p>
           </div>
 
           <div className="flex flex-col items-start gap-4">
             <div className="flex items-center gap-2 text-zinc-300">
               <MapPin className="w-5 h-5 text-white" />
-              <span>Barcelone, Casp 54</span>
+              <span>{location}</span>
             </div>
           </div>
         </div>
@@ -61,11 +78,9 @@ export function Studios() {
 
           <div className="absolute bottom-8 left-8 md:bottom-12 md:left-12 max-w-sm z-20">
             <h4 className="text-white font-bold text-2xl mb-2">
-              Notre matériel
+              {equipmentTitle}
             </h4>
-            <p className="text-zinc-300 text-sm font-medium">
-              3 Caméras 4K • Micros Shure SM7B • Éclairage Aputure
-            </p>
+            <p className="text-zinc-300 text-sm font-medium">{equipmentList}</p>
           </div>
         </motion.div>
       </div>
