@@ -12,6 +12,7 @@ const navItems = [
   { name: "Le Studio", href: "#studio" },
   { name: "Offres", href: "#offres" },
   { name: "Vision", href: "#vision" },
+  { name: "Blog", href: "/blog" },
 ];
 
 export function Header() {

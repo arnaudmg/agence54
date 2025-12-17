@@ -1,8 +1,9 @@
-import { withPayload } from '@payloadcms/next/withPayload'
+import { withPayload } from "@payloadcms/next/withPayload";
 import type { NextConfig } from "next";
+import path from "path";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  outputFileTracingRoot: path.join(__dirname),
 };
 
 export default withPayload(nextConfig);
