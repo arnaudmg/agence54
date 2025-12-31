@@ -5,18 +5,18 @@ import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { ContactPopup, useContactPopup } from "@/components/ui/ContactPopup";
 import { cn } from "@/lib/utils";
-import { 
-  MapPin, 
-  Mic2, 
-  Camera, 
-  Lightbulb, 
-  Monitor, 
+import {
+  MapPin,
+  Mic2,
+  Camera,
+  Lightbulb,
+  Monitor,
   Headphones,
   Clock,
   Users,
   CheckCircle2,
   ArrowRight,
-  Play
+  Play,
 } from "lucide-react";
 
 const equipment = [
@@ -37,7 +37,7 @@ const equipment = [
   },
   {
     icon: Monitor,
-    title: "Prompteur 21\"",
+    title: 'Prompteur 21"',
     description: "Lecture fluide pour des prises parfaites",
   },
   {
@@ -67,7 +67,8 @@ const packs = [
     name: "Pack 1",
     price: "1 000",
     tagline: "Présence régulière sans friction",
-    description: "Pour entrepreneurs qui veulent être visibles sans exploser leur agenda.",
+    description:
+      "Pour entrepreneurs qui veulent être visibles sans exploser leur agenda.",
     features: [
       "1 session / mois (3h)",
       "1 format long (YouTube 5 min ou Podcast 30 min)",
@@ -167,8 +168,8 @@ export function StudioPage() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-lg md:text-xl text-zinc-400 mb-8 max-w-xl leading-relaxed"
               >
-                Un espace de tournage professionnel au cœur de Barcelone. 
-                Équipement broadcast, décor premium et accompagnement expert 
+                Un espace de tournage professionnel au cœur de Barcelone.
+                Équipement broadcast, décor premium et accompagnement expert
                 pour créer des podcasts qui marquent les esprits.
               </motion.p>
 
@@ -214,8 +215,12 @@ export function StudioPage() {
                 {/* Decorative overlay */}
                 <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
-                  <span className="text-white font-bold text-lg">Studio 54</span>
-                  <p className="text-zinc-400 text-sm">Carrer de Casp, 54 - Barcelone</p>
+                  <span className="text-white font-bold text-lg">
+                    Studio 54
+                  </span>
+                  <p className="text-zinc-400 text-sm">
+                    Carrer de Casp, 54 - Barcelone
+                  </p>
                 </div>
               </div>
               {/* Corner accent */}
@@ -276,7 +281,9 @@ export function StudioPage() {
                 <div className="w-12 h-12 bg-zinc-900 rounded-none flex items-center justify-center mb-4 group-hover:bg-zinc-800 transition-colors">
                   <item.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                <h3 className="text-xl font-bold text-white mb-2">
+                  {item.title}
+                </h3>
                 <p className="text-zinc-500 text-sm">{item.description}</p>
               </motion.div>
             ))}
@@ -329,7 +336,9 @@ export function StudioPage() {
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span className="text-white font-medium text-sm">Espace tournage</span>
+                <span className="text-white font-medium text-sm">
+                  Espace tournage
+                </span>
               </div>
             </div>
 
@@ -355,14 +364,16 @@ export function StudioPage() {
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span className="text-white font-medium text-sm">Équipement</span>
+                <span className="text-white font-medium text-sm">
+                  Équipement
+                </span>
               </div>
             </div>
 
             {/* Image 5 - Console */}
             <div className="aspect-square bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
               <Image
-                src="/C0167T01.JPG"
+                src="/IMG_2815.JPG"
                 alt="Lounge invités"
                 fill
                 className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
@@ -413,9 +424,10 @@ export function StudioPage() {
                 <span className="text-zinc-500">à deux pas de l'Eixample.</span>
               </h2>
               <p className="text-zinc-400 mb-8 leading-relaxed">
-                Notre studio de podcast est idéalement situé dans le quartier de l'Eixample, 
-                l'un des quartiers les plus accessibles de Barcelone. À 5 minutes à pied 
-                du Passeig de Gràcia et parfaitement desservi par les transports en commun.
+                Notre studio de podcast est idéalement situé dans le quartier de
+                l'Eixample, l'un des quartiers les plus accessibles de
+                Barcelone. À 5 minutes à pied du Passeig de Gràcia et
+                parfaitement desservi par les transports en commun.
               </p>
 
               <div className="space-y-4 mb-8">
@@ -425,7 +437,9 @@ export function StudioPage() {
                   </div>
                   <div>
                     <h4 className="text-white font-medium">Adresse</h4>
-                    <p className="text-zinc-500 text-sm">Carrer de Casp, 54 - 08010 Barcelone</p>
+                    <p className="text-zinc-500 text-sm">
+                      Carrer de Casp, 54 - 08010 Barcelone
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -434,7 +448,9 @@ export function StudioPage() {
                   </div>
                   <div>
                     <h4 className="text-white font-medium">Horaires</h4>
-                    <p className="text-zinc-500 text-sm">Lun - Ven : 9h - 20h / Sam : Sur réservation</p>
+                    <p className="text-zinc-500 text-sm">
+                      Lun - Ven : 9h - 20h / Sam : Sur réservation
+                    </p>
                   </div>
                 </div>
               </div>
@@ -451,7 +467,10 @@ export function StudioPage() {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 md:py-32 bg-zinc-950 border-t border-zinc-800">
+      <section
+        id="pricing"
+        className="py-20 md:py-32 bg-zinc-950 border-t border-zinc-800"
+      >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <span className="text-sm font-bold tracking-widest text-zinc-500 uppercase mb-4 block">
@@ -477,8 +496,8 @@ export function StudioPage() {
                 transition={{ delay: idx * 0.1 }}
                 className={cn(
                   "relative bg-black border p-8 flex flex-col transition-all",
-                  pack.popular 
-                    ? "border-white md:scale-105 md:-my-4" 
+                  pack.popular
+                    ? "border-white md:scale-105 md:-my-4"
                     : "border-zinc-800 hover:border-zinc-700"
                 )}
               >
@@ -493,13 +512,19 @@ export function StudioPage() {
 
                 {/* Header */}
                 <div className="mb-6">
-                  <h3 className="text-lg font-bold text-zinc-400 mb-2">{pack.name}</h3>
+                  <h3 className="text-lg font-bold text-zinc-400 mb-2">
+                    {pack.name}
+                  </h3>
                   <div className="flex items-baseline gap-1 mb-3">
-                    <span className="text-4xl md:text-5xl font-bold text-white">{pack.price}</span>
+                    <span className="text-4xl md:text-5xl font-bold text-white">
+                      {pack.price}
+                    </span>
                     <span className="text-zinc-500">€</span>
                     <span className="text-zinc-600 text-sm">/ mois</span>
                   </div>
-                  <p className="text-white font-medium text-sm">{pack.tagline}</p>
+                  <p className="text-white font-medium text-sm">
+                    {pack.tagline}
+                  </p>
                 </div>
 
                 {/* Description */}
@@ -510,7 +535,10 @@ export function StudioPage() {
                 {/* Features */}
                 <ul className="space-y-3 mb-8 flex-1">
                   {pack.features.map((feature, featureIdx) => (
-                    <li key={featureIdx} className="flex items-start gap-3 text-sm">
+                    <li
+                      key={featureIdx}
+                      className="flex items-start gap-3 text-sm"
+                    >
                       <CheckCircle2 className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                       <span className="text-zinc-300">{feature}</span>
                     </li>
@@ -560,8 +588,8 @@ export function StudioPage() {
             transition={{ delay: 0.1 }}
             className="text-zinc-400 text-lg max-w-2xl mx-auto mb-10"
           >
-            Réservez une visite gratuite de notre studio et discutons de votre projet. 
-            Notre équipe est là pour vous accompagner de A à Z.
+            Réservez une visite gratuite de notre studio et discutons de votre
+            projet. Notre équipe est là pour vous accompagner de A à Z.
           </motion.p>
 
           <motion.div
@@ -583,4 +611,3 @@ export function StudioPage() {
     </>
   );
 }
-
