@@ -34,7 +34,7 @@ export const Home: GlobalConfig = {
           name: 'description',
           label: 'Description',
           type: 'textarea',
-          defaultValue: 'Agence 54 accompagne dirigeants et entrepreneurs dans la création d’un personal brand puissant.',
+          defaultValue: "54BCN accompagne dirigeants et entrepreneurs dans la création d'un personal brand puissant.",
         },
         {
           name: 'youtubeVideoId',

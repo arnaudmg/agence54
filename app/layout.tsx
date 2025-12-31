@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Header } from "@/components/layout/Header";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Agence 54 - Personal Branding & Contenu Vidéo Clé-en-Main",
-  description: "Votre moteur de contenu mensuel. Agence 54 accompagne dirigeants et entrepreneurs dans la création de personal brand puissant.",
+  title: "54BCN - Personal Branding & Contenu Vidéo Clé-en-Main",
+  description: "Votre moteur de contenu mensuel. 54BCN accompagne dirigeants et entrepreneurs dans la création de personal brand puissant.",
 };
 
 export default function RootLayout({
@@ -28,7 +27,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white selection:bg-white selection:text-black`}
       >
-        <Header />
         {children}
       </body>
     </html>

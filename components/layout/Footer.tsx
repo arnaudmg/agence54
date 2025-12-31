@@ -27,7 +27,7 @@ export function Footer({ data }: FooterProps) {
               href="/"
               className="text-2xl font-bold tracking-tighter text-white uppercase"
             >
-              Agence 54<span className="text-zinc-600">.</span>
+              54BCN<span className="text-zinc-600">.</span>
             </Link>
             <p className="text-zinc-500 text-sm leading-relaxed max-w-xs">
               {description}
@@ -105,7 +105,7 @@ export function Footer({ data }: FooterProps) {
         </div>
 
         <div className="border-t border-zinc-900 pt-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 text-xs text-zinc-600">
-          <p>© 2025 Agence 54. Tous droits réservés.</p>
+          <p>© 2025 54BCN. Tous droits réservés.</p>
           <div className="flex items-center gap-6">
             <Link href="#" className="hover:text-zinc-400">
               Mentions légales

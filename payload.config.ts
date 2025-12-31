@@ -1,5 +1,6 @@
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
+import { vercelBlobStorage } from "@payloadcms/storage-vercel-blob";
 import path from "path";
 import { buildConfig } from "payload";
 import { fileURLToPath } from "url";
@@ -13,6 +14,9 @@ const dirname = path.dirname(filename);
 export default buildConfig({
   admin: {
     user: "users",
+    meta: {
+      titleSuffix: " - 54BCN",
+    },
   },
   editor: lexicalEditor(),
   collections: [
@@ -27,13 +31,50 @@ export default buildConfig({
     },
     {
       slug: "media",
-      upload: true,
+      upload: {
+        mimeTypes: ["image/*", "video/*", "application/pdf"],
+        imageSizes: [
+          {
+            name: "thumbnail",
+            width: 400,
+            height: 300,
+            position: "centre",
+          },
+          {
+            name: "card",
+            width: 768,
+            height: 512,
+            position: "centre",
+          },
+          {
+            name: "hero",
+            width: 1920,
+            height: 1080,
+            position: "centre",
+          },
+        ],
+        adminThumbnail: "thumbnail",
+      },
       fields: [
         {
           name: "alt",
           type: "text",
+          required: true,
+          admin: {
+            description: "Texte alternatif pour l'accessibilité (SEO)",
+          },
+        },
+        {
+          name: "caption",
+          type: "text",
+          admin: {
+            description: "Légende de l'image (optionnel)",
+          },
         },
       ],
+      access: {
+        read: () => true,
+      },
     },
     Blog,
   ],
@@ -47,6 +88,12 @@ export default buildConfig({
   }),
   sharp,
   plugins: [
-    // Add plugins here
+    vercelBlobStorage({
+      enabled: true,
+      collections: {
+        media: true,
+      },
+      token: process.env.BLOB_READ_WRITE_TOKEN || "",
+    }),
   ],
 });
