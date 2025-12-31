@@ -13,7 +13,7 @@ interface FooterProps {
 export function Footer({ data }: FooterProps) {
   const {
     description = "Personal Branding & Contenu Vidéo Clé-en-main. Pour dirigeants et entrepreneurs francophones.",
-    email = "hello@agence54.com",
+    email = "contact@54bcn.com",
     addressLine1 = "Studio 54",
     addressLine2 = "Barcelone, Casp 54",
   } = data || {};
@@ -32,20 +32,6 @@ export function Footer({ data }: FooterProps) {
             <p className="text-zinc-500 text-sm leading-relaxed max-w-xs">
               {description}
             </p>
-            <div className="flex items-center gap-4">
-              <Link
-                href="#"
-                className="text-zinc-400 hover:text-white transition-colors"
-              >
-                <Instagram className="w-5 h-5" />
-              </Link>
-              <Link
-                href="#"
-                className="text-zinc-400 hover:text-white transition-colors"
-              >
-                <Linkedin className="w-5 h-5" />
-              </Link>
-            </div>
           </div>
 
           <div>
@@ -55,15 +41,7 @@ export function Footer({ data }: FooterProps) {
             <ul className="space-y-4 text-sm text-zinc-500">
               <li>
                 <Link
-                  href="#concept"
-                  className="hover:text-white transition-colors"
-                >
-                  Concept
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#studio"
+                  href="/studio"
                   className="hover:text-white transition-colors"
                 >
                   Le Studio
@@ -71,15 +49,18 @@ export function Footer({ data }: FooterProps) {
               </li>
               <li>
                 <Link
-                  href="#offres"
+                  href="/#offres"
                   className="hover:text-white transition-colors"
                 >
                   Offres
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Découvrir nos offres
+                <Link
+                  href="/blog"
+                  className="hover:text-white transition-colors"
+                >
+                  Blog
                 </Link>
               </li>
             </ul>
