@@ -54,11 +54,10 @@ const equipment = [
 
 const features = [
   "Studio climatisé et insonorisé",
-  "Espace maquillage & préparation",
   "Lounge confortable pour vos invités",
   "WiFi haut débit & connexion fibre",
-  "Parking privé disponible",
   "À 5 min de Passeig de Gràcia",
+  "On s'occupe de tout, vous venez juste avec votre idée",
 ];
 
 const packs = [
@@ -428,10 +427,16 @@ export function StudioPage() {
               </div>
 
               <Button
-                onClick={contactPopup.open}
+                asChild
                 className="bg-white text-black hover:bg-zinc-200 rounded-none h-12 px-6"
               >
-                Obtenir l'itinéraire
+                <a
+                  href="https://www.google.com/maps/dir/?api=1&destination=Carrer+de+Casp+54+Barcelona+Spain"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Obtenir l'itinéraire
+                </a>
               </Button>
             </motion.div>
           </div>
