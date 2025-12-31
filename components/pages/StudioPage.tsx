@@ -312,9 +312,9 @@ export function StudioPage() {
           </div>
 
           {/* Image Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {/* Large square image - Vue principale */}
-            <div className="aspect-square md:col-span-2 md:row-span-2 bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+            {/* Square image - Vue principale */}
+            <div className="aspect-square md:col-span-3 bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
               <Image
                 src="/DSC00025.JPG"
                 alt="Vue principale du studio de podcast"
@@ -326,31 +326,34 @@ export function StudioPage() {
               </div>
             </div>
 
-            {/* Small square 1 - Espace tournage */}
-            <div className="aspect-square bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
-              <Image
-                src="/C0167T01.JPG"
-                alt="Espace tournage"
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span className="text-white font-medium text-sm">
-                  Espace tournage
-                </span>
+            {/* Right column - 2 small squares */}
+            <div className="md:col-span-2 flex flex-col gap-4">
+              {/* Small square 1 - Espace tournage */}
+              <div className="aspect-square bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
+                <Image
+                  src="/C0167T01.JPG"
+                  alt="Espace tournage"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span className="text-white font-medium text-sm">
+                    Espace tournage
+                  </span>
+                </div>
               </div>
-            </div>
 
-            {/* Small square 2 - Régie */}
-            <div className="aspect-square bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
-              <Image
-                src="/C0161T01.JPG"
-                alt="Régie"
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span className="text-white font-medium text-sm">Régie</span>
+              {/* Small square 2 - Régie */}
+              <div className="aspect-square bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
+                <Image
+                  src="/C0161T01.JPG"
+                  alt="Régie"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <span className="text-white font-medium text-sm">Régie</span>
+                </div>
               </div>
             </div>
           </div>
