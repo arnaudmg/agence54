@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { ContactPopup, useContactPopup } from "@/components/ui/ContactPopup";
 import { cn } from "@/lib/utils";
@@ -195,7 +196,7 @@ export function StudioPage() {
               </motion.div>
             </div>
 
-            {/* Right: Hero Image Placeholder */}
+            {/* Right: Hero Image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -203,16 +204,13 @@ export function StudioPage() {
               className="relative"
             >
               <div className="aspect-[4/3] bg-zinc-900 border border-zinc-800 relative overflow-hidden">
-                {/* Placeholder pattern */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-20 h-20 rounded-full bg-zinc-800 flex items-center justify-center mx-auto mb-4">
-                      <Camera className="w-10 h-10 text-zinc-600" />
-                    </div>
-                    <p className="text-zinc-600 text-sm">Image du studio</p>
-                    <p className="text-zinc-700 text-xs mt-1">1200 x 900px recommandé</p>
-                  </div>
-                </div>
+                <Image
+                  src="/studio.jpg"
+                  alt="Studio de podcast 54BCN à Barcelone"
+                  fill
+                  className="object-cover"
+                  priority
+                />
                 {/* Decorative overlay */}
                 <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
@@ -307,36 +305,72 @@ export function StudioPage() {
             </Button>
           </div>
 
-          {/* Image Grid Placeholders */}
+          {/* Image Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {/* Large image */}
+            {/* Large image - Vue principale */}
             <div className="col-span-2 row-span-2 aspect-square bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <Camera className="w-12 h-12 text-zinc-700 mx-auto mb-2" />
-                  <p className="text-zinc-600 text-sm">Vue principale</p>
-                </div>
-              </div>
-              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span className="text-white font-medium">Voir en plein écran</span>
+              <Image
+                src="/DSC00025.JPG"
+                alt="Vue principale du studio de podcast"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span className="text-white font-medium">Vue principale</span>
               </div>
             </div>
 
-            {/* Smaller images */}
-            {["Espace tournage", "Régie", "Zone maquillage", "Lounge"].map((label, idx) => (
-              <div
-                key={idx}
-                className="aspect-square bg-zinc-900 border border-zinc-800 relative overflow-hidden group"
-              >
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <Camera className="w-8 h-8 text-zinc-700 mx-auto mb-1" />
-                    <p className="text-zinc-600 text-xs">{label}</p>
-                  </div>
-                </div>
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity" />
+            {/* Image 2 - Espace tournage */}
+            <div className="aspect-square bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
+              <Image
+                src="/C0167T01.JPG"
+                alt="Espace tournage"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span className="text-white font-medium text-sm">Espace tournage</span>
               </div>
-            ))}
+            </div>
+
+            {/* Image 3 - Micro RODE */}
+            <div className="aspect-square bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
+              <Image
+                src="/C0161T01.JPG"
+                alt="Configuration multi-invités"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span className="text-white font-medium text-sm">Régie</span>
+              </div>
+            </div>
+
+            {/* Image 4 - Studio ambiance */}
+            <div className="aspect-square bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
+              <Image
+                src="/studio.jpg"
+                alt="Studio ambiance"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span className="text-white font-medium text-sm">Équipement</span>
+              </div>
+            </div>
+
+            {/* Image 5 - Console */}
+            <div className="aspect-square bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
+              <Image
+                src="/C0167T01.JPG"
+                alt="Lounge invités"
+                fill
+                className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span className="text-white font-medium text-sm">Lounge</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -345,20 +379,23 @@ export function StudioPage() {
       <section className="py-20 md:py-32 bg-black">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Map Placeholder */}
+            {/* Google Maps */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="aspect-video bg-zinc-900 border border-zinc-800 relative overflow-hidden"
             >
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-12 h-12 text-zinc-700 mx-auto mb-2" />
-                  <p className="text-zinc-600 text-sm">Google Maps</p>
-                  <p className="text-zinc-700 text-xs mt-1">Intégrer la carte ici</p>
-                </div>
-              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.5234567890123!2d2.1702!3d41.3927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2f73c5e5c5b%3A0x1234567890abcdef!2sCarrer%20de%20Casp%2C%2054%2C%2008010%20Barcelona%2C%20Spain!5e0!3m2!1sen!2ses!4v1234567890"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 grayscale hover:grayscale-0 transition-all duration-500"
+              />
             </motion.div>
 
             {/* Location Info */}
