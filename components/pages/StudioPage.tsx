@@ -313,9 +313,9 @@ export function StudioPage() {
           </div>
 
           {/* Image Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Large image - Vue principale */}
-            <div className="col-span-2 row-span-2 aspect-square bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
+            <div className="aspect-[4/5] md:row-span-2 bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
               <Image
                 src="/DSC00025.JPG"
                 alt="Vue principale du studio de podcast"
@@ -342,44 +342,16 @@ export function StudioPage() {
               </div>
             </div>
 
-            {/* Image 3 - Micro RODE */}
+            {/* Image 3 - Régie */}
             <div className="aspect-square bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
               <Image
                 src="/C0161T01.JPG"
-                alt="Configuration multi-invités"
+                alt="Régie"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                 <span className="text-white font-medium text-sm">Régie</span>
-              </div>
-            </div>
-
-            {/* Image 4 - Studio ambiance */}
-            <div className="aspect-square bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
-              <Image
-                src="/studio.jpg"
-                alt="Studio ambiance"
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span className="text-white font-medium text-sm">
-                  Équipement
-                </span>
-              </div>
-            </div>
-
-            {/* Image 5 - Console */}
-            <div className="aspect-square bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
-              <Image
-                src="/IMG_2815.JPG"
-                alt="Lounge invités"
-                fill
-                className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span className="text-white font-medium text-sm">Lounge</span>
               </div>
             </div>
           </div>
