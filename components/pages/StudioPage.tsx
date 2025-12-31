@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Pricing } from "@/components/sections/Pricing";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { ContactPopup, useContactPopup } from "@/components/ui/ContactPopup";
@@ -311,48 +312,43 @@ export function StudioPage() {
             </Button>
           </div>
 
-          {/* Image Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-            {/* Square image - Vue principale */}
-            <div className="aspect-square md:col-span-3 bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
-              <Image
-                src="/DSC00025.JPG"
-                alt="Vue principale du studio de podcast"
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span className="text-white font-medium">Vue principale</span>
+          {/* Image Grid - Bento Style */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:items-stretch">
+            {/* Large horizontal image on the left */}
+            <div className="bg-zinc-900 border border-zinc-800 relative overflow-hidden">
+              <div className="aspect-[3/2] md:h-full relative">
+                <Image
+                  src="/DSC00025.JPG"
+                  alt="Vue principale du studio de podcast"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
 
-            {/* Right column - 2 small squares */}
-            <div className="md:col-span-2 flex flex-col gap-4">
-              {/* Small square 1 - Espace tournage */}
-              <div className="aspect-square bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
-                <Image
-                  src="/C0167T01.JPG"
-                  alt="Espace tournage"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <span className="text-white font-medium text-sm">
-                    Espace tournage
-                  </span>
+            {/* Right column - 2 images stacked */}
+            <div className="flex flex-col gap-4">
+              {/* Image 1 - Espace tournage */}
+              <div className="bg-zinc-900 border border-zinc-800 relative overflow-hidden">
+                <div className="aspect-[16/9] relative w-full">
+                  <Image
+                    src="/C0167T01.JPG"
+                    alt="Espace tournage"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
 
-              {/* Small square 2 - Régie */}
-              <div className="aspect-square bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
-                <Image
-                  src="/C0161T01.JPG"
-                  alt="Régie"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <span className="text-white font-medium text-sm">Régie</span>
+              {/* Image 2 - Régie */}
+              <div className="bg-zinc-900 border border-zinc-800 relative overflow-hidden">
+                <div className="aspect-[16/9] relative w-full">
+                  <Image
+                    src="/C0161T01.JPG"
+                    alt="Régie"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
             </div>
@@ -423,7 +419,7 @@ export function StudioPage() {
                   <div>
                     <h4 className="text-white font-medium">Horaires</h4>
                     <p className="text-zinc-500 text-sm">
-                      Lun - Ven : 9h - 20h / Sam : Sur réservation
+                      Lun - Ven : 9h - 20h
                     </p>
                   </div>
                 </div>
@@ -446,102 +442,7 @@ export function StudioPage() {
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section
-        id="pricing"
-        className="py-20 md:py-32 bg-zinc-950 border-t border-zinc-800"
-      >
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <span className="text-sm font-bold tracking-widest text-zinc-500 uppercase mb-4 block">
-              Tarifs & Packs
-            </span>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-white mb-4">
-              3 packs mensuels.
-              <br />
-              <span className="text-zinc-500">Clairs & Scalables.</span>
-            </h2>
-            <p className="text-zinc-400 max-w-2xl mx-auto">
-              Engagement mensuel. Tout est inclus. Pas de frais cachés.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {packs.map((pack, idx) => (
-              <motion.div
-                key={pack.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className={cn(
-                  "relative bg-black border p-8 flex flex-col transition-all",
-                  pack.popular
-                    ? "border-white md:scale-105 md:-my-4"
-                    : "border-zinc-800 hover:border-zinc-700"
-                )}
-              >
-                {/* Popular badge */}
-                {pack.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="bg-white text-black text-xs font-bold uppercase tracking-wider px-4 py-1">
-                      Populaire
-                    </span>
-                  </div>
-                )}
-
-                {/* Header */}
-                <div className="mb-6">
-                  <h3 className="text-lg font-bold text-zinc-400 mb-2">
-                    {pack.name}
-                  </h3>
-                  <div className="flex items-baseline gap-1 mb-3">
-                    <span className="text-4xl md:text-5xl font-bold text-white">
-                      {pack.price}
-                    </span>
-                    <span className="text-zinc-500">€</span>
-                    <span className="text-zinc-600 text-sm">/ mois</span>
-                  </div>
-                  <p className="text-white font-medium text-sm">
-                    {pack.tagline}
-                  </p>
-                </div>
-
-                {/* Description */}
-                <p className="text-zinc-500 text-sm mb-6 pb-6 border-b border-zinc-800">
-                  {pack.description}
-                </p>
-
-                {/* Features */}
-                <ul className="space-y-3 mb-8 flex-1">
-                  {pack.features.map((feature, featureIdx) => (
-                    <li
-                      key={featureIdx}
-                      className="flex items-start gap-3 text-sm"
-                    >
-                      <CheckCircle2 className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-zinc-300">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* CTA */}
-                <Button
-                  onClick={contactPopup.open}
-                  className={cn(
-                    "w-full h-12 rounded-none font-medium",
-                    pack.popular
-                      ? "bg-white text-black hover:bg-zinc-200"
-                      : "bg-zinc-900 text-white hover:bg-zinc-800 border border-zinc-700"
-                  )}
-                >
-                  Choisir ce pack
-                </Button>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Pricing />
 
       {/* Final CTA */}
       <section className="py-20 md:py-32 bg-black border-t border-zinc-800 relative overflow-hidden">
@@ -556,7 +457,7 @@ export function StudioPage() {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white mb-6"
           >
-            Prêt à créer votre podcast
+            Prêt à construire votre visibilité digitale
             <br />
             <span className="text-zinc-500">à Barcelone ?</span>
           </motion.h2>
@@ -568,8 +469,10 @@ export function StudioPage() {
             transition={{ delay: 0.1 }}
             className="text-zinc-400 text-lg max-w-2xl mx-auto mb-10"
           >
-            Réservez une visite gratuite de notre studio et discutons de votre
-            projet. Notre équipe est là pour vous accompagner de A à Z.
+            Découvrez nos packs mensuels et démarrez dès aujourd'hui. Tournage,
+            montage, diffusion : notre équipe gère l'intégralité de votre
+            production pour un personal branding qui vous fait gagner en
+            visibilité et en crédibilité.
           </motion.p>
 
           <motion.div
@@ -583,7 +486,7 @@ export function StudioPage() {
               onClick={contactPopup.open}
               className="h-14 px-10 bg-white text-black hover:bg-zinc-200 rounded-none text-base"
             >
-              Contactez-nous maintenant
+              Choisir mon pack
             </Button>
           </motion.div>
         </div>
