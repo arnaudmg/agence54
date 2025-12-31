@@ -30,7 +30,7 @@ export function Hero({ data }: HeroProps) {
   return (
     <>
       <ContactPopup isOpen={contactPopup.isOpen} onClose={contactPopup.close} />
-      
+
       <section className="relative min-h-screen flex flex-col items-start justify-center pt-20 overflow-hidden">
         {/* Video Background */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -80,10 +80,10 @@ export function Hero({ data }: HeroProps) {
           >
             <Button
               size="lg"
-              onClick={contactPopup.open}
+              asChild
               className="w-full sm:w-auto text-base px-8 h-14 bg-white text-black hover:bg-zinc-200 rounded-none"
             >
-              Découvrir nos offres
+              <Link href="#offres">Découvrir nos offres</Link>
             </Button>
             <Button
               variant="outline"
