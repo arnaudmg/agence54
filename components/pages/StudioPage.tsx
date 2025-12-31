@@ -312,9 +312,9 @@ export function StudioPage() {
           </div>
 
           {/* Image Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* Large image - Vue principale */}
-            <div className="aspect-[4/5] md:row-span-2 bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* Large square image - Vue principale */}
+            <div className="aspect-square md:col-span-2 md:row-span-2 bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
               <Image
                 src="/DSC00025.JPG"
                 alt="Vue principale du studio de podcast"
@@ -326,7 +326,7 @@ export function StudioPage() {
               </div>
             </div>
 
-            {/* Image 2 - Espace tournage */}
+            {/* Small square 1 - Espace tournage */}
             <div className="aspect-square bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
               <Image
                 src="/C0167T01.JPG"
@@ -341,7 +341,7 @@ export function StudioPage() {
               </div>
             </div>
 
-            {/* Image 3 - Régie */}
+            {/* Small square 2 - Régie */}
             <div className="aspect-square bg-zinc-900 border border-zinc-800 relative overflow-hidden group">
               <Image
                 src="/C0161T01.JPG"
