@@ -55,67 +55,9 @@ const equipment = [
 
 const features = [
   "Studio climatisé et insonorisé",
-  "Lounge confortable pour vos invités",
-  "WiFi haut débit & connexion fibre",
+  "Matériel professionnel",
   "À 5 min de Passeig de Gràcia",
   "On s'occupe de tout, vous venez juste avec votre idée",
-];
-
-const packs = [
-  {
-    id: "pack1",
-    name: "Pack 1",
-    price: "1 000",
-    tagline: "Présence régulière sans friction",
-    description:
-      "Pour entrepreneurs qui veulent être visibles sans exploser leur agenda.",
-    features: [
-      "1 session / mois (3h)",
-      "1 format long (YouTube 5 min ou Podcast 30 min)",
-      "4 shorts / mois",
-      "Scripts + angles + hooks",
-      "Montage complet",
-      "Miniature & Covers",
-      "Planification",
-    ],
-    popular: false,
-  },
-  {
-    id: "pack2",
-    name: "Pack 2",
-    price: "2 000",
-    tagline: "Visibilité x2 + Ligne éditoriale",
-    description: "Pour ceux qui veulent structurer leur personal brand.",
-    features: [
-      "2 sessions / mois (4h)",
-      "2 formats longs (YouTube 5 min ou Podcast 30 min)",
-      "8 shorts / mois",
-      "Scripts + angles + hooks",
-      "Montage complet",
-      "Miniature & Covers",
-      "Planification",
-      "Analyse mensuelle + optimisations",
-    ],
-    popular: true,
-  },
-  {
-    id: "pack3",
-    name: "Pack 3",
-    price: "4 000",
-    tagline: "Domination sectorielle",
-    description: "Pour leaders & experts très visibles.",
-    features: [
-      "3 sessions / mois (6h)",
-      "4 formats longs (YouTube 5 min ou Podcast 30 min)",
-      "20 shorts / mois",
-      "Scripts + angles + hooks",
-      "Montage complet",
-      "Miniature & Covers",
-      "Planification",
-      "Analyse mensuelle + optimisations",
-    ],
-    popular: false,
-  },
 ];
 
 export function StudioPage() {
