@@ -20,7 +20,7 @@ export function Footer({ data }: FooterProps) {
 
   return (
     <footer className="bg-black border-t border-zinc-900 pt-20 pb-10">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20 text-left">
           <div className="space-y-6">
             <Link
