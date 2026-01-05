@@ -6,6 +6,7 @@ import { buildConfig } from "payload";
 import { fileURLToPath } from "url";
 import sharp from "sharp";
 import { Home } from "./payload/globals/Home";
+import { Studio } from "./payload/globals/Studio";
 import { Blog } from "./payload/collections/Blog";
 
 const filename = fileURLToPath(import.meta.url);
@@ -78,7 +79,7 @@ export default buildConfig({
     },
     Blog,
   ],
-  globals: [Home],
+  globals: [Home, Studio],
   secret: process.env.PAYLOAD_SECRET || "YOUR_SECRET_HERE",
   typescript: {
     outputFile: path.resolve(dirname, "payload-types.ts"),
