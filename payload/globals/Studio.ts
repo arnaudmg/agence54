@@ -1,23 +1,4 @@
 import { GlobalConfig } from "payload";
-import React from "react";
-
-const uploadToMediaTooltip =
-  "Pour une URL complète : allez dans Media (sidebar) → Create new → uploadez le fichier → remplissez les champs → sauvegardez → cliquez sur l’icône Copy URL qui apparaît au bout du nom de l’image → collez ce lien ici.";
-
-const publicPathDescription = React.createElement(
-  "span",
-  null,
-  "Chemin dans /public (ex: /studio.jpg) ou ",
-  React.createElement(
-    "span",
-    {
-      title: uploadToMediaTooltip,
-      style: { textDecoration: "underline dotted", cursor: "help" },
-    },
-    "URL complète"
-  ),
-  "."
-);
 
 export const Studio: GlobalConfig = {
   slug: "studio",
@@ -129,7 +110,13 @@ export const Studio: GlobalConfig = {
               type: "text",
               defaultValue: "/studio.jpg",
               admin: {
-                description: publicPathDescription,
+                description: "Chemin dans /public (ex: /studio.jpg) ou URL complète.",
+                components: {
+                  Description: {
+                    path: "@/payload/components/ImageSrcDescription",
+                    exportName: "ImageSrcDescription",
+                  },
+                },
               },
             },
             {
@@ -311,7 +298,13 @@ export const Studio: GlobalConfig = {
                   type: "text",
                   defaultValue: "/DSC00025.JPG",
                   admin: {
-                    description: publicPathDescription,
+                    description: "Chemin dans /public (ex: /studio.jpg) ou URL complète.",
+                    components: {
+                      Description: {
+                        path: "@/payload/components/ImageSrcDescription",
+                        exportName: "ImageSrcDescription",
+                      },
+                    },
                   },
                 },
                 {
@@ -333,7 +326,13 @@ export const Studio: GlobalConfig = {
                   type: "text",
                   defaultValue: "/C0167T01.JPG",
                   admin: {
-                    description: publicPathDescription,
+                    description: "Chemin dans /public (ex: /studio.jpg) ou URL complète.",
+                    components: {
+                      Description: {
+                        path: "@/payload/components/ImageSrcDescription",
+                        exportName: "ImageSrcDescription",
+                      },
+                    },
                   },
                 },
                 {
@@ -355,7 +354,13 @@ export const Studio: GlobalConfig = {
                   type: "text",
                   defaultValue: "/C0161T01.JPG",
                   admin: {
-                    description: publicPathDescription,
+                    description: "Chemin dans /public (ex: /studio.jpg) ou URL complète.",
+                    components: {
+                      Description: {
+                        path: "@/payload/components/ImageSrcDescription",
+                        exportName: "ImageSrcDescription",
+                      },
+                    },
                   },
                 },
                 {
